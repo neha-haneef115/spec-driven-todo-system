@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "taskflow.fullname" . }}-frontend
+  name: {{ include "Taskly.fullname" . }}-frontend
   labels:
-    {{- include "taskflow.labels" . | nindent 4 }}
+    {{- include "Taskly.labels" . | nindent 4 }}
     app: frontend
 spec:
   replicas: {{ .Values.frontend.replicaCount }}
   selector:
     matchLabels:
-      {{- include "taskflow.selectorLabels" . | nindent 6 }}
+      {{- include "Taskly.selectorLabels" . | nindent 6 }}
       app: frontend
   template:
     metadata:
       labels:
-        {{- include "taskflow.selectorLabels" . | nindent 8 }}
+        {{- include "Taskly.selectorLabels" . | nindent 8 }}
         app: frontend
     spec:
       containers:
@@ -33,43 +33,43 @@ spec:
             - name: NEXT_PUBLIC_BASE_URL
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-config
+                  name: {{ include "Taskly.fullname" . }}-config
                   key: NEXT_PUBLIC_BASE_URL
             - name: NEXT_PUBLIC_API_BASE_URL
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-config
+                  name: {{ include "Taskly.fullname" . }}-config
                   key: NEXT_PUBLIC_API_BASE_URL
             - name: NODE_ENV
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-config
+                  name: {{ include "Taskly.fullname" . }}-config
                   key: NODE_ENV
             # From Secrets
             - name: NEXT_PUBLIC_CHATKIT_DOMAIN_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-secrets
+                  name: {{ include "Taskly.fullname" . }}-secrets
                   key: chatkit-domain-key
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-secrets
+                  name: {{ include "Taskly.fullname" . }}-secrets
                   key: database-url
             - name: BETTER_AUTH_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-secrets
+                  name: {{ include "Taskly.fullname" . }}-secrets
                   key: better-auth-secret
             - name: SMTP_USER
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-secrets
+                  name: {{ include "Taskly.fullname" . }}-secrets
                   key: smtp-user
             - name: SMTP_PASS
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-secrets
+                  name: {{ include "Taskly.fullname" . }}-secrets
                   key: smtp-pass
           resources:
             {{- toYaml .Values.frontend.resources | nindent 12 }}

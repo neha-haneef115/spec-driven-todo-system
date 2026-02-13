@@ -13,7 +13,7 @@ links:
   spec: null
   ticket: null
   adr: null
-  pr: "https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/11"
+  pr: "https://github.com/neha-haneef115/spec-driven-todo-system/pull/11"
 files:
   - "phase-05/"
 tests: []
@@ -44,4 +44,4 @@ Intelligently execute git workflows to commit work and create a PR following pro
 - Generated comprehensive PR description with test plan
 
 ## Result
-Pull request successfully created at: https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/11
+Pull request successfully created at: https://github.com/neha-haneef115/spec-driven-todo-system/pull/11

@@ -14,7 +14,7 @@ links:
   spec: null
   ticket: null
   adr: null
-  pr: https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/14
+  pr: https://github.com/neha-haneef115/spec-driven-todo-system/pull/14
 files_yaml:
   - phase-05/audit-service/README.md
   - phase-05/audit-service/main.py
@@ -58,6 +58,6 @@ sp.git.commit_pr
 ✅ **Workflow executed successfully:**
 - **Branch:** phase-05/002-kafka-integration
 - **Commit:** "refactor(kafka): restructure Kafka integration with dedicated microservices"
-- **PR:** https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/14
+- **PR:** https://github.com/neha-haneef115/spec-driven-todo-system/pull/14
 
 The changes involved a significant architectural refactoring of the Kafka integration, moving from a centralized approach to a microservices architecture with dedicated audit, notification, and reminder services. All changes were committed, pushed to the remote repository, and a pull request was created with a descriptive title and body outlining the changes and test plan.

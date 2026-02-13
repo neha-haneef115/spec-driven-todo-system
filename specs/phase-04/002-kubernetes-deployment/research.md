@@ -1,7 +1,7 @@
-# Research: Kubernetes Deployment for Taskflow
+# Research: Kubernetes Deployment for Taskly
 
 ## Decision: Minikube Setup and Configuration
-**Rationale**: Minikube provides a local Kubernetes environment that closely mimics production clusters, making it ideal for development and testing of the Taskflow application. It allows for testing of all Kubernetes features without requiring cloud resources.
+**Rationale**: Minikube provides a local Kubernetes environment that closely mimics production clusters, making it ideal for development and testing of the Taskly application. It allows for testing of all Kubernetes features without requiring cloud resources.
 
 **Alternatives considered**:
 - Kind (Kubernetes in Docker) - simpler but less feature-complete

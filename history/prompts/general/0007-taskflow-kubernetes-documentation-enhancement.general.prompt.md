@@ -16,10 +16,10 @@ links:
   adr: null
   pr: null
 files:
- - phase-04/charts/taskflow/templates/secrets.yaml
- - phase-04/charts/taskflow/templates/secrets.example.yaml
- - phase-04/charts/taskflow/templates/deployment-frontend.yaml
- - phase-04/charts/taskflow/templates/configmap-secrets.yaml
+ - phase-04/charts/Taskly/templates/secrets.yaml
+ - phase-04/charts/Taskly/templates/secrets.example.yaml
+ - phase-04/charts/Taskly/templates/deployment-frontend.yaml
+ - phase-04/charts/Taskly/templates/configmap-secrets.yaml
  - .gitignore
  - README.md
  - LICENSE

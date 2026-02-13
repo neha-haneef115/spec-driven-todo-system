@@ -1,4 +1,4 @@
-# Quickstart: Kubernetes Deployment for Taskflow
+# Quickstart: Kubernetes Deployment for Taskly
 
 ## Prerequisites
 
@@ -31,16 +31,16 @@
 1. **Build or pull the container images** for frontend, backend, and MCP server:
    ```bash
    # If building locally:
-   docker build -t taskflow-frontend:latest -f ./phase-04/frontend/Dockerfile ./phase-04/frontend
-   docker build -t taskflow-backend:latest -f ./phase-04/backend/Dockerfile ./phase-04/backend
-   docker build -t taskflow-mcp-server:latest -f ./phase-04/mcp_server/Dockerfile ./phase-04/mcp_server
+   docker build -t Taskly-frontend:latest -f ./phase-04/frontend/Dockerfile ./phase-04/frontend
+   docker build -t Taskly-backend:latest -f ./phase-04/backend/Dockerfile ./phase-04/backend
+   docker build -t Taskly-mcp-server:latest -f ./phase-04/mcp_server/Dockerfile ./phase-04/mcp_server
    ```
 
 2. **Load images into Minikube**:
    ```bash
-   minikube image load taskflow-frontend:latest
-   minikube image load taskflow-backend:latest
-   minikube image load taskflow-mcp-server:latest
+   minikube image load Taskly-frontend:latest
+   minikube image load Taskly-backend:latest
+   minikube image load Taskly-mcp-server:latest
    ```
 
 ## Deploy Using Helm
@@ -52,7 +52,7 @@
 
 2. **Install the Helm chart**:
    ```bash
-   helm install taskflow ./taskflow --values ./taskflow/values.yaml
+   helm install Taskly ./Taskly --values ./Taskly/values.yaml
    ```
 
 3. **Verify the deployment**:
@@ -71,12 +71,12 @@
 
 2. **Add an entry to your hosts file**:
    ```
-   <minikube-ip> taskflow.local
+   <minikube-ip> Taskly.local
    ```
 
 3. **Access the application**:
-   - Frontend: http://taskflow.local
-   - Backend API: http://taskflow.local/api
+   - Frontend: http://Taskly.local
+   - Backend API: http://Taskly.local/api
 
 ## Useful Commands
 
@@ -100,8 +100,8 @@
 - **Update with new image**:
   ```bash
   # After building a new image
-  minikube image load taskflow-frontend:latest
-  kubectl set image deployment/frontend-deployment frontend-container=taskflow-frontend:latest
+  minikube image load Taskly-frontend:latest
+  kubectl set image deployment/frontend-deployment frontend-container=Taskly-frontend:latest
   ```
 
 ## Troubleshooting

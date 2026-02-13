@@ -1,9 +1,9 @@
-# Default values for taskflow
+# Default values for Taskly
 
 # Frontend configuration
 frontend:
   image:
-    repository: taskflow-frontend
+    repository: Taskly-frontend
     tag: latest
     pullPolicy: IfNotPresent
   service:
@@ -27,7 +27,7 @@ frontend:
 # Backend configuration
 backend:
   image:
-    repository: taskflow-backend
+    repository: Taskly-backend
     tag: latest
     pullPolicy: IfNotPresent
   service:
@@ -52,7 +52,7 @@ backend:
 # MCP Server configuration
 mcpServer:
   image:
-    repository: taskflow-mcp-server
+    repository: Taskly-mcp-server
     tag: latest
     pullPolicy: IfNotPresent
   service:
@@ -114,7 +114,7 @@ ingress:
     kubernetes.io/tls-acme: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /
   hosts:
-    - host: taskflow.local
+    - host: Taskly.local
       paths:
         - path: /
           pathType: Prefix
@@ -132,7 +132,7 @@ postgresql:
     type: LoadBalancer
     port: 5432
   replicaCount: 1
-  database: "taskflow_db"
+  database: "Taskly_db"
   user: "postgres"
   resources:
     requests:

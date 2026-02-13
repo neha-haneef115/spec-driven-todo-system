@@ -14,7 +14,7 @@ export const sendEmail = async ({ to, subject, react }: SendEmailParams): Promis
     const emailHtml = await render(react);
 
     const mailOptions = {
-      from: "TaskFlow <noreply@taskflow.com>",
+      from: "Taskly <noreply@Taskly.com>",
       to,
       subject,
       html: emailHtml,

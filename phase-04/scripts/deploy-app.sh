@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Script to deploy the Taskflow application using Helm
+# Script to deploy the Taskly application using Helm
 
 set -e
 
 # Default values
-NAMESPACE="taskflow"
-CHART_PATH="./charts/taskflow"
-RELEASE_NAME="taskflow-release"
+NAMESPACE="Taskly"
+CHART_PATH="./charts/Taskly"
+RELEASE_NAME="Taskly-release"
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -27,9 +27,9 @@ while [[ $# -gt 0 ]]; do
         -h|--help)
             echo "Usage: $0 [OPTIONS]"
             echo "Options:"
-            echo "  -n, --namespace STRING   Namespace to deploy to (default: taskflow)"
-            echo "  -c, --chart STRING       Path to the Helm chart (default: ./charts/taskflow)"
-            echo "  -r, --release STRING     Release name (default: taskflow-release)"
+            echo "  -n, --namespace STRING   Namespace to deploy to (default: Taskly)"
+            echo "  -c, --chart STRING       Path to the Helm chart (default: ./charts/Taskly)"
+            echo "  -r, --release STRING     Release name (default: Taskly-release)"
             echo "  -h, --help              Show this help message"
             exit 0
             ;;
@@ -40,7 +40,7 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-echo "Deploying Taskflow application to namespace: $NAMESPACE"
+echo "Deploying Taskly application to namespace: $NAMESPACE"
 
 # Create namespace if it doesn't exist
 kubectl create namespace "$NAMESPACE" --dry-run=client -o yaml | kubectl apply -f -

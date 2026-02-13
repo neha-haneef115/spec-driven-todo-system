@@ -27,7 +27,7 @@ export function Navbar() {
               <CoffeeIcon className="w-5 h-5 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-xl font-bold font-display text-foreground">TaskFlow</h1>
+              <h1 className="text-xl font-bold font-display text-foreground">Taskly</h1>
               <p className="text-xs text-muted-foreground font-sans">AI-Powered Productivity</p>
             </div>
           </Link>

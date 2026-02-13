@@ -1,7 +1,7 @@
-# Taskflow Application Deployment Reference
+# Taskly Application Deployment Reference
 
 ## Application Architecture
-The Taskflow application consists of three main components:
+The Taskly application consists of three main components:
 - Frontend: Next.js web application
 - Backend: Python FastAPI API server
 - MCP Server: Model Context Protocol server for AI operations
@@ -14,14 +14,14 @@ The Taskflow application consists of three main components:
 ## Kubernetes Deployment Components
 
 ### Frontend Deployment
-- Container image: taskflow-frontend
+- Container image: Taskly-frontend
 - Port: 3000 (Next.js default)
 - Environment variables:
   - BACKEND_URL: URL of the backend service
   - NODE_ENV: production/development
 
 ### Backend Deployment
-- Container image: taskflow-backend
+- Container image: Taskly-backend
 - Port: 8000 (FastAPI default)
 - Environment variables:
   - MCP_SERVER_URL: URL of the MCP server service (e.g., http://mcp-server:8080)
@@ -29,7 +29,7 @@ The Taskflow application consists of three main components:
   - API_KEY: Authentication key if needed
 
 ### MCP Server Deployment
-- Container image: taskflow-mcp-server
+- Container image: Taskly-mcp-server
 - Port: 8080 (MCP server default)
 - Environment variables:
   - GEMINI_API_KEY: API key for the Gemini service (or other LLM provider)

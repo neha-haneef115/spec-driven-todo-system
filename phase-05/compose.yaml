@@ -3,7 +3,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: taskflow-frontend
+    container_name: Taskly-frontend
     restart: unless-stopped
     init: true
     env_file:
@@ -15,7 +15,7 @@ services:
       backend:
         condition: service_healthy
     networks:
-      - taskflow-network
+      - Taskly-network
     # Health check for Next.js frontend - checks if server is responding
     healthcheck:
       test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://127.0.0.1:3000/ || wget --quiet --tries=1 --spider http://127.0.0.1:3000/sign-in"]
@@ -28,7 +28,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: taskflow-backend
+    container_name: Taskly-backend
     restart: unless-stopped
     init: true
     env_file:
@@ -39,7 +39,7 @@ services:
       mcp-server:
         condition: service_healthy
     networks:
-      - taskflow-network
+      - Taskly-network
     # Health check for FastAPI backend
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:8000/health"]
@@ -52,7 +52,7 @@ services:
     build:
       context: ./mcp_server
       dockerfile: Dockerfile
-    container_name: taskflow-mcp-server
+    container_name: Taskly-mcp-server
     restart: unless-stopped
     init: true
     env_file:
@@ -60,7 +60,7 @@ services:
     ports:
       - "8080:8080"
     networks:
-      - taskflow-network
+      - Taskly-network
     # Health check for MCP server - checks the health endpoint
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:8080/health"]
@@ -70,6 +70,6 @@ services:
       start_period: 30s
 
 networks:
-  taskflow-network:
+  Taskly-network:
     driver: bridge
     

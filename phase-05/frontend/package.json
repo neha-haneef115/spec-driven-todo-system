@@ -1,16 +1,21 @@
 {
-  "name": "frontend",
+  "name": "taskly-frontend",
   "version": "0.1.0",
   "private": true,
+  "description": "Taskly - Modern task management application frontend",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "debug-build": "next build --debug-prerender",
     "start": "next start",
     "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "type-check": "tsc --noEmit",
     "email": "email dev",
     "better-auth-migrate": "npx @better-auth/cli migrate --config src/lib/auth/server.ts",
-    "better-auth-generate": "npx @better-auth/cli generate --config src/lib/auth/server.ts"
+    "better-auth-generate": "npx @better-auth/cli generate --config src/lib/auth/server.ts",
+    "clean": "rm -rf .next node_modules",
+    "setup": "npm install && npm run better-auth-migrate"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

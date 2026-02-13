@@ -2,13 +2,13 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: {{ include "taskflow.fullname" . }}-network-policy
+  name: {{ include "Taskly.fullname" . }}-network-policy
   labels:
-    {{- include "taskflow.labels" . | nindent 4 }}
+    {{- include "Taskly.labels" . | nindent 4 }}
 spec:
   podSelector:
     matchLabels:
-      {{- include "taskflow.selectorLabels" . | nindent 6 }}
+      {{- include "Taskly.selectorLabels" . | nindent 6 }}
   policyTypes:
     - Ingress
     - Egress

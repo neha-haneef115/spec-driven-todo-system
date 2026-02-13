@@ -1,6 +1,6 @@
-# Contributing to TaskFlow
+# Contributing to Taskly
 
-Thank you for your interest in contributing to TaskFlow! We welcome contributions from the community and are grateful for your help in improving the project.
+Thank you for your interest in contributing to Taskly! We welcome contributions from the community and are grateful for your help in improving the project.
 
 ## Code of Conduct
 
@@ -39,8 +39,8 @@ By participating in this project, you agree to abide by our Code of Conduct. Ple
 ### Getting Started
 1. Clone the repository:
    ```bash
-   git clone https://github.com/neha-haneef115/todo-spec-driven-hackathon.git
-   cd taskflow
+   git clone https://github.com/neha-haneef115/spec-driven-todo-system.git
+   cd Taskly
    ```
 
 2. For Phase II (Full-Stack Web Application):
@@ -95,4 +95,4 @@ By participating in this project, you agree to abide by our Code of Conduct. Ple
 
 If you have questions about contributing, feel free to open an issue or reach out to the maintainers.
 
-Thank you for contributing to TaskFlow!
+Thank you for contributing to Taskly!

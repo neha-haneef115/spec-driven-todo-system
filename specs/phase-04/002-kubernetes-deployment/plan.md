@@ -1,4 +1,4 @@
-# Implementation Plan: Kubernetes Deployment for Taskflow
+# Implementation Plan: Kubernetes Deployment for Taskly
 
 **Branch**: `phase-04/002-kubernetes-deployment` | **Date**: 2026-01-05 | **Spec**: [Kubernetes Deployment Spec](spec.md)
 **Input**: Feature specification from `/specs/phase-04/002-kubernetes-deployment/spec.md`
@@ -7,7 +7,7 @@
 
 ## Summary
 
-Deploy the Taskflow application (frontend, backend, MCP server) on a local Kubernetes cluster using Minikube. This involves creating Helm charts for the application, configuring service discovery and networking, setting up persistent storage, and implementing health checks. The deployment will follow production-grade practices with proper resource allocation, security configurations, and scalability features.
+Deploy the Taskly application (frontend, backend, MCP server) on a local Kubernetes cluster using Minikube. This involves creating Helm charts for the application, configuring service discovery and networking, setting up persistent storage, and implementing health checks. The deployment will follow production-grade practices with proper resource allocation, security configurations, and scalability features.
 
 ## Technical Context
 
@@ -63,7 +63,7 @@ phase-04/
 │   ├── pyproject.toml
 │   └── Dockerfile
 ├── charts/               # Helm charts go here
-│   ├── taskflow/         # The main "umbrella" chart
+│   ├── Taskly/         # The main "umbrella" chart
 │   │   ├── Chart.yaml    # Chart definition
 │   │   ├── values.yaml   # Default values for all services
 │   │   └── templates/    # Kubernetes resource templates

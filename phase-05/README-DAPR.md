@@ -1,6 +1,6 @@
-# DAPR Integration for Taskflow Application
+# DAPR Integration for Taskly Application
 
-This document describes how to run the actual Taskflow application (backend, frontend, mcp-server) with DAPR integration.
+This document describes how to run the actual Taskly application (backend, frontend, mcp-server) with DAPR integration.
 
 ## 🚀 Prerequisites
 
@@ -11,10 +11,10 @@ This document describes how to run the actual Taskflow application (backend, fro
 
 ## 🏗️ Architecture
 
-The Taskflow application consists of three main services with DAPR integration:
-- **taskflow-backend**: Backend API service
-- **taskflow-frontend**: Frontend web application
-- **taskflow-mcp-server**: MCP server component
+The Taskly application consists of three main services with DAPR integration:
+- **Taskly-backend**: Backend API service
+- **Taskly-frontend**: Frontend web application
+- **Taskly-mcp-server**: MCP server component
 
 All services have DAPR sidecars for:
 - Service-to-service invocation
@@ -25,16 +25,16 @@ All services have DAPR sidecars for:
 
 ## 📦 Deployment with Helm
 
-The recommended way to deploy the Taskflow application is using the Helm chart:
+The recommended way to deploy the Taskly application is using the Helm chart:
 
 ```bash
-# Deploy Taskflow with DAPR integration
-helm install taskflow phase-05/charts/taskflow --values phase-05/charts/taskflow/values.yaml
+# Deploy Taskly with DAPR integration
+helm install Taskly phase-05/charts/Taskly --values phase-05/charts/Taskly/values.yaml
 ```
 
 To upgrade an existing deployment:
 ```bash
-helm upgrade taskflow phase-05/charts/taskflow --values phase-05/charts/taskflow/values.yaml
+helm upgrade Taskly phase-05/charts/Taskly --values phase-05/charts/Taskly/values.yaml
 ```
 
 ## ⚙️ Configuration
@@ -57,11 +57,11 @@ Check that services are running with DAPR sidecars:
 kubectl get pods
 
 # Verify DAPR annotations on pods
-kubectl describe pod [taskflow-pod-name] | grep -A 5 "Annotations:"
+kubectl describe pod [Taskly-pod-name] | grep -A 5 "Annotations:"
 
 # Look for these DAPR annotations:
 # - dapr.io/enabled: "true"
-# - dapr.io/app-id: "taskflow-[service-name]"
+# - dapr.io/app-id: "Taskly-[service-name]"
 # - dapr.io/app-port: "[port-number]"
 ```
 
@@ -81,7 +81,7 @@ The following DAPR components are configured:
 ### Service Invocation
 Use DAPR for service-to-service communication:
 ```bash
-dapr invoke --app-id taskflow-backend --method [method-name]
+dapr invoke --app-id Taskly-backend --method [method-name]
 ```
 
 ### Pub/Sub Messaging
@@ -111,7 +111,7 @@ To verify the deployment is working:
 
 2. Verify DAPR annotations are present:
    ```bash
-   kubectl describe pod taskflow-frontend-[hash] | grep dapr
+   kubectl describe pod Taskly-frontend-[hash] | grep dapr
    ```
 
 3. Check that services are accessible:
@@ -128,7 +128,7 @@ To verify the deployment is working:
 
 To remove the deployment:
 ```bash
-helm uninstall taskflow
+helm uninstall Taskly
 ```
 
 ## 🔄 Updating
@@ -141,6 +141,6 @@ To update the application with new changes:
 ## ⚠️ Notes
 
 - This deployment does NOT include the sample DAPR applications (publisher-app, subscriber-app, etc.)
-- Only the actual Taskflow services (backend, frontend, mcp-server) are deployed
+- Only the actual Taskly services (backend, frontend, mcp-server) are deployed
 - DAPR sidecars are injected automatically via the Helm chart annotations
 - Auto-scaling is configured from 1 to 50 instances as per requirements

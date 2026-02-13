@@ -12,7 +12,7 @@ export default function SignInPage() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-espresso shadow-elevated mb-4">
               <CoffeeIcon className="w-8 h-8 text-primary-foreground" />
             </div>
-            <h1 className="text-4xl font-bold font-display text-foreground">TaskFlow</h1>
+            <h1 className="text-4xl font-bold font-display text-foreground">Taskly</h1>
             <p className="text-muted-foreground mt-2 font-sans">Your AI-powered productivity companion</p>
           </div>
           <SignInForm />

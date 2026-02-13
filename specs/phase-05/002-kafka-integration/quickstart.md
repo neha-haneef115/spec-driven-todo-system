@@ -13,7 +13,7 @@
 
 ```bash
 # Navigate to the project root
-cd taskflow
+cd Taskly
 
 # Start Kafka using Docker Compose
 docker-compose -f .specify/docker/kafka-local.yml up -d
@@ -39,8 +39,8 @@ Create a `.env` file with the following:
 ```env
 # Kafka Configuration
 KAFKA_BROKERS=localhost:9092
-KAFKA_CLIENT_ID=taskflow
-KAFKA_GROUP_ID=taskflow-group
+KAFKA_CLIENT_ID=Taskly
+KAFKA_GROUP_ID=Taskly-group
 
 # SASL/SCRAM Authentication (for production)
 KAFKA_SASL_MECHANISM=SCRAM-SHA-256
@@ -196,7 +196,7 @@ docker exec -it kafka-local kafka-topics --describe --topic todo.task.events --b
 
 ```bash
 # Check consumer group status
-docker exec -it kafka-local kafka-consumer-groups --bootstrap-server localhost:9092 --describe --group taskflow-group
+docker exec -it kafka-local kafka-consumer-groups --bootstrap-server localhost:9092 --describe --group Taskly-group
 ```
 
 ### Common Issues

@@ -16,12 +16,12 @@ links:
   adr: null
   pr: null
 files:
-  - "phase-05/charts/taskflow/templates/deployment-backend.yaml"
-  - "phase-05/charts/taskflow/templates/deployment-frontend.yaml"
-  - "phase-05/charts/taskflow/templates/deployment-mcp-server.yaml"
-  - "phase-05/charts/taskflow/values.yaml"
-  - "phase-05/charts/taskflow/Chart.yaml"
-  - "phase-05/charts/taskflow/templates/NOTES.txt"
+  - "phase-05/charts/Taskly/templates/deployment-backend.yaml"
+  - "phase-05/charts/Taskly/templates/deployment-frontend.yaml"
+  - "phase-05/charts/Taskly/templates/deployment-mcp-server.yaml"
+  - "phase-05/charts/Taskly/values.yaml"
+  - "phase-05/charts/Taskly/Chart.yaml"
+  - "phase-05/charts/Taskly/templates/NOTES.txt"
 tests:
   - "Helm chart linting passed"
   - "Helm installation successful"
@@ -32,7 +32,7 @@ tests:
 # DAPR Helm Integration
 
 ## Summary
-Successfully integrated DAPR (Distributed Application Runtime) with the Taskflow Helm chart, enabling permanent DAPR sidecar injection with every deployment. Modified the Helm chart templates to include conditional DAPR annotations that can be enabled/disabled via configuration.
+Successfully integrated DAPR (Distributed Application Runtime) with the Taskly Helm chart, enabling permanent DAPR sidecar injection with every deployment. Modified the Helm chart templates to include conditional DAPR annotations that can be enabled/disabled via configuration.
 
 ## Implementation Details
 
@@ -54,8 +54,8 @@ Successfully integrated DAPR (Distributed Application Runtime) with the Taskflow
 - Confirmed services are running with DAPR integration
 
 ## Outcome
-The Taskflow application can now be deployed with DAPR integration using the standard Helm command:
-`helm install taskflow path/to/chart --values path/to/values.json`
+The Taskly application can now be deployed with DAPR integration using the standard Helm command:
+`helm install Taskly path/to/chart --values path/to/values.json`
 
 DAPR sidecars will be automatically injected into all services when enabled in the values file, providing service-to-service communication, pub/sub messaging, and state management capabilities.
 

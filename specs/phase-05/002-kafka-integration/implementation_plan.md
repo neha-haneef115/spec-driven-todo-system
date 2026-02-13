@@ -24,25 +24,25 @@ This document outlines the plan for integrating Apache Kafka into the Todo Chatb
 ### 1. Task Service
 - Handles core task management operations (CRUD)
 - Publishes task-related events to Kafka
-- Container: `taskflow-task-service`
+- Container: `Taskly-task-service`
 - Ports: 8001
 
 ### 2. Notification Service
 - Consumes task events and sends notifications
 - Handles email, push, and in-app notifications
-- Container: `taskflow-notification-service`
+- Container: `Taskly-notification-service`
 - Ports: 8002
 
 ### 3. Audit Service
 - Consumes all events for compliance logging
 - Maintains audit trails
-- Container: `taskflow-audit-service`
+- Container: `Taskly-audit-service`
 - Ports: 8003
 
 ### 4. Reminder Service
 - Handles reminder scheduling and triggering
 - Publishes reminder events at appropriate times
-- Container: `taskflow-reminder-service`
+- Container: `Taskly-reminder-service`
 - Ports: 8004
 
 ## Folder Structure

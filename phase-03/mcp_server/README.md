@@ -1,5 +1,5 @@
 ---
-title: Phase 03 MCP Server for Taskflow
+title: Phase 03 MCP Server for Taskly
 emoji: 🤖
 colorFrom: green
 colorTo: blue
@@ -7,10 +7,10 @@ sdk: docker
 pinned: true
 python_version: 3.12
 app_port: 8080
-short_description: "MCP server connecting Taskflow agents to task management"
+short_description: "MCP server connecting Taskly agents to task management"
 ---
 
-# MCP Server for Taskflow
+# MCP Server for Taskly
 
 This is an MCP (Model Context Protocol) server that enables AI agents to interact with task management functionality through standardized tools. The server authenticates AI agents using JWT tokens, ensures user isolation, and provides operations for creating, reading, updating, deleting, and completing tasks stored in a Neon PostgreSQL database.
 

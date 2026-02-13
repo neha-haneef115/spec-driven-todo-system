@@ -13,7 +13,7 @@ links:
   spec: null
   ticket: null
   adr: null
-  pr: "https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/9"
+  pr: "https://github.com/neha-haneef115/spec-driven-todo-system/pull/9"
 files: 
   - .claude/settings.local.json
   - .gitignore
@@ -31,7 +31,7 @@ files:
   - .claude/skills/kubernetes-deployment/
   - CONTRIBUTING.md
   - LICENSE
-  - history/prompts/general/1-taskflow-kubernetes-documentation-enhancement.general.prompt.md
+  - history/prompts/general/1-Taskly-kubernetes-documentation-enhancement.general.prompt.md
   - history/prompts/phase-04/002-kubernetes-deployment/
   - phase-04/KUBERNETES-DEPLOYMENT-SUCCESS.md
   - phase-04/charts/
@@ -53,7 +53,7 @@ sp.git.commit_pr
 ✅ Workflow executed successfully:
 • Branch: phase-04/002-kubernetes-deployment
 • Commit: "feat: implement Kubernetes deployment for phase 04"
-• PR: https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/9
+• PR: https://github.com/neha-haneef115/spec-driven-todo-system/pull/9
 
 The pull request has been created with a descriptive title and body summarizing the changes. The PR includes:
 - Kubernetes deployment configuration files and charts

@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Health check script for Taskflow application
+# Health check script for Taskly application
 
 set -e
 
 # Default values
-NAMESPACE="taskflow"
-RELEASE_NAME="taskflow-release"
+NAMESPACE="Taskly"
+RELEASE_NAME="Taskly-release"
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -22,8 +22,8 @@ while [[ $# -gt 0 ]]; do
         -h|--help)
             echo "Usage: $0 [OPTIONS]"
             echo "Options:"
-            echo "  -n, --namespace STRING   Namespace to check (default: taskflow)"
-            echo "  -r, --release STRING     Release name to check (default: taskflow-release)"
+            echo "  -n, --namespace STRING   Namespace to check (default: Taskly)"
+            echo "  -r, --release STRING     Release name to check (default: Taskly-release)"
             echo "  -h, --help              Show this help message"
             exit 0
             ;;
@@ -34,7 +34,7 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-echo "Checking health of Taskflow application in namespace: $NAMESPACE"
+echo "Checking health of Taskly application in namespace: $NAMESPACE"
 
 # Check if the namespace exists
 if ! kubectl get namespace "$NAMESPACE" >/dev/null 2>&1; then

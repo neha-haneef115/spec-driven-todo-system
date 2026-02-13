@@ -1,6 +1,6 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: taskflow
+  name: Taskly
   labels:
-    {{- include "taskflow.labels" . | nindent 4 }}
+    {{- include "Taskly.labels" . | nindent 4 }}

@@ -1,33 +1,48 @@
 import { SignInForm } from "@/components/auth/sign-in";
 import { AuthRedirect } from "@/components/shared/auth-redirect";
-import { CoffeeIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function SignInPage() {
   return (
     <AuthRedirect requireAuth={false} redirectTo="/dashboard">
-      <div className="min-h-screen flex items-center justify-center bg-gradient-warm p-4">
-        <div className="w-full max-w-md animate-scale-in">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-6">
+        <div className="w-full max-w-md">
           {/* Logo Section */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-espresso shadow-elevated mb-4">
-              <CoffeeIcon className="w-8 h-8 text-primary-foreground" />
+            <div className="inline-block">
+              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                Taskly
+              </h1>
+              <p className="text-gray-600 dark:text-gray-400 text-lg">
+                Welcome back
+              </p>
             </div>
-            <h1 className="text-4xl font-bold font-display text-foreground">TaskFlow</h1>
-            <p className="text-muted-foreground mt-2 font-sans">Your AI-powered productivity companion</p>
           </div>
-          <SignInForm />
-          {/* Features list */}
-          <div className="mt-8 grid grid-cols-3 gap-4 text-center animate-slide-up delay-300">
-            {[
-              { icon: "🎯", label: "Smart Tasks" },
-              { icon: "🤖", label: "AI Assistant" },
-              { icon: "🎙️", label: "Voice Input" },
-            ].map((feature) => (
-              <div key={feature.label} className="p-3 rounded-xl bg-card/50 shadow-soft">
-                <span className="text-2xl">{feature.icon}</span>
-                <p className="text-xs text-muted-foreground mt-1 font-sans">{feature.label}</p>
-              </div>
-            ))}
+          
+          {/* Sign In Form */}
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mb-6">
+            <SignInForm />
+          </div>
+          
+          {/* Bottom Links */}
+          <div className="text-center space-y-4">
+            <div className="text-sm text-gray-600 dark:text-gray-400">
+              Don't have an account?{" "}
+              <Link 
+                href="/sign-up" 
+                className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
+              >
+                Sign up
+              </Link>
+            </div>
+            <div className="text-sm">
+              <Link 
+                href="/forgot-password" 
+                className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+              >
+                Forgot your password?
+              </Link>
+            </div>
           </div>
         </div>
       </div>

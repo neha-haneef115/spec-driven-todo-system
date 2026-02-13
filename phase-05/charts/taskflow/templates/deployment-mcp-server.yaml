@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "taskflow.fullname" . }}-mcp-server
+  name: {{ include "Taskly.fullname" . }}-mcp-server
   labels:
-    {{- include "taskflow.labels" . | nindent 4 }}
+    {{- include "Taskly.labels" . | nindent 4 }}
     app: mcp-server
 spec:
   replicas: {{ .Values.mcpServer.replicaCount }}
   selector:
     matchLabels:
-      {{- include "taskflow.selectorLabels" . | nindent 6 }}
+      {{- include "Taskly.selectorLabels" . | nindent 6 }}
       app: mcp-server
   template:
     metadata:
       annotations:
         {{- if .Values.dapr.enabled }}
         dapr.io/enabled: "true"
-        dapr.io/app-id: "{{ include "taskflow.fullname" . }}-mcp-server"
+        dapr.io/app-id: "{{ include "Taskly.fullname" . }}-mcp-server"
         dapr.io/app-port: "8080"
         dapr.io/config: "{{ .Values.dapr.config }}"
         dapr.io/log-level: "{{ .Values.dapr.logLevel }}"
         {{- end }}
       labels:
-        {{- include "taskflow.selectorLabels" . | nindent 8 }}
+        {{- include "Taskly.selectorLabels" . | nindent 8 }}
         app: mcp-server
     spec:
       containers:
@@ -38,38 +38,38 @@ spec:
             - name: DEBUG
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-config
+                  name: {{ include "Taskly.fullname" . }}-config
                   key: DEBUG
             - name: PORT
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-config
+                  name: {{ include "Taskly.fullname" . }}-config
                   key: PORT
             - name: ACCESS_TOKEN_EXPIRE_MINUTES
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-config
+                  name: {{ include "Taskly.fullname" . }}-config
                   key: ACCESS_TOKEN_EXPIRE_MINUTES
             - name: JWT_ALGORITHM
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-config
+                  name: {{ include "Taskly.fullname" . }}-config
                   key: JWT_ALGORITHM_MCP
             # From Secrets
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-secrets
+                  name: {{ include "Taskly.fullname" . }}-secrets
                   key: database-url
             - name: JWT_SECRET_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-secrets
+                  name: {{ include "Taskly.fullname" . }}-secrets
                   key: jwt-secret-key
             - name: GEMINI_API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-secrets
+                  name: {{ include "Taskly.fullname" . }}-secrets
                   key: gemini-api-key
           livenessProbe:
             httpGet:

@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Script to set up Minikube for the Taskflow application
+# Script to set up Minikube for the Taskly application
 
 set -e
 
-echo "Setting up Minikube for Taskflow application..."
+echo "Setting up Minikube for Taskly application..."
 
 # Check if Minikube is installed
 if ! command -v minikube &> /dev/null; then

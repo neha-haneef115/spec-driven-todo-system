@@ -1,7 +1,7 @@
-# Task Management Frontend
+# Taskly - Task Management Frontend
 
 ## Overview
-The frontend of our task management application provides a clean, intuitive user interface that allows users to efficiently organize and track their tasks. Built with Next.js, it offers a responsive and fast user experience across all devices.
+The frontend of Taskly provides a clean, intuitive user interface that allows users to efficiently organize and track their tasks. Built with Next.js, it offers a responsive and fast user experience across all devices.
 
 ## Key Features
 - **User Authentication**: Secure sign-up, login, and password recovery

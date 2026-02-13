@@ -1,5 +1,5 @@
 ==========================================================
-  TaskFlow - Advanced Todo Application with AI Assistant 
+  Taskly - Advanced Todo Application with AI Assistant 
 ==========================================================
 
 Thank you for installing {{ .Chart.Name }}!
@@ -18,16 +18,16 @@ Backend API:
 === Verify Deployment ===
 
 Check all pods are running:
-  kubectl get pods -n taskflow
+  kubectl get pods -n Taskly
 
 Check services:
-  kubectl get svc -n taskflow
+  kubectl get svc -n Taskly
 
 View backend logs:
-  kubectl logs -f deployment/{{ include "taskflow.fullname" . }}-backend -n taskflow
+  kubectl logs -f deployment/{{ include "Taskly.fullname" . }}-backend -n Taskly
 
 View frontend logs:
-  kubectl logs -f deployment/{{ include "taskflow.fullname" . }}-frontend -n taskflow
+  kubectl logs -f deployment/{{ include "Taskly.fullname" . }}-frontend -n Taskly
 
 === Important Notes ===
 
@@ -36,7 +36,7 @@ Make sure you have set the envoirenment variables in secrects.yaml
 === Uninstall ===
 
 To uninstall the chart:
-  helm uninstall {{ .Release.Name }} -n taskflow
+  helm uninstall {{ .Release.Name }} -n Taskly
 
 To also delete the namespace:
-  kubectl delete namespace taskflow
+  kubectl delete namespace Taskly

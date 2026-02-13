@@ -14,14 +14,14 @@ links:
   spec: null
   ticket: null
   adr: null
-  pr: "https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/12"
+  pr: "https://github.com/neha-haneef115/spec-driven-todo-system/pull/12"
 files:
   - "phase-05/README-DAPR.md"
-  - "phase-05/charts/taskflow/templates/deployment-backend.yaml"
-  - "phase-05/charts/taskflow/templates/deployment-frontend.yaml"
-  - "phase-05/charts/taskflow/templates/deployment-mcp-server.yaml"
-  - "phase-05/charts/taskflow/templates/NOTES.txt"
-  - "phase-05/charts/taskflow/values.yaml"
+  - "phase-05/charts/Taskly/templates/deployment-backend.yaml"
+  - "phase-05/charts/Taskly/templates/deployment-frontend.yaml"
+  - "phase-05/charts/Taskly/templates/deployment-mcp-server.yaml"
+  - "phase-05/charts/Taskly/templates/NOTES.txt"
+  - "phase-05/charts/Taskly/values.yaml"
   - "phase-05/dapr-components/config.yaml"
   - "phase-05/dapr-components/statestore.yaml"
   - "phase-05/k8s/components/monitoring.yaml"
@@ -38,7 +38,7 @@ tests:
 
 ## Summary
 
-Successfully completed DAPR integration for the Taskflow application with all PR review suggestions applied. The implementation includes DAPR sidecars for all Taskflow services (backend, frontend, mcp-server) with proper service invocation, pub/sub messaging, and state management capabilities.
+Successfully completed DAPR integration for the Taskly application with all PR review suggestions applied. The implementation includes DAPR sidecars for all Taskly services (backend, frontend, mcp-server) with proper service invocation, pub/sub messaging, and state management capabilities.
 
 ## Changes Applied
 
@@ -57,7 +57,7 @@ Successfully completed DAPR integration for the Taskflow application with all PR
 - Horizontal Pod Autoscaling from 1 to 50 instances
 
 ### Documentation:
-- Created README-DAPR.md in phase-05 folder with instructions for running actual Taskflow application
+- Created README-DAPR.md in phase-05 folder with instructions for running actual Taskly application
 - Updated Helm chart documentation with DAPR integration details
 - Updated NOTES.txt with explicit paths and instructions
 
@@ -71,4 +71,4 @@ All changes have been:
 
 ## Outcome
 
-The Taskflow application now has full DAPR integration with all PR suggestions applied. The implementation focuses on the actual Taskflow services (backend, frontend, mcp-server) rather than sample applications, and includes proper auto-scaling, monitoring, and configuration management.
+The Taskly application now has full DAPR integration with all PR suggestions applied. The implementation focuses on the actual Taskly services (backend, frontend, mcp-server) rather than sample applications, and includes proper auto-scaling, monitoring, and configuration management.

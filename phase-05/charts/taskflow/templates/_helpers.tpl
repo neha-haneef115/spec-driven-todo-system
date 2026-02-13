@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "taskflow.name" -}}
+{{- define "Taskly.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "taskflow.fullname" -}}
+{{- define "Taskly.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "taskflow.chart" -}}
+{{- define "Taskly.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "taskflow.labels" -}}
-helm.sh/chart: {{ include "taskflow.chart" . }}
-{{ include "taskflow.selectorLabels" . }}
+{{- define "Taskly.labels" -}}
+helm.sh/chart: {{ include "Taskly.chart" . }}
+{{ include "Taskly.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "taskflow.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "taskflow.name" . }}
+{{- define "Taskly.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "Taskly.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "taskflow.serviceAccountName" -}}
+{{- define "Taskly.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "taskflow.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "Taskly.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

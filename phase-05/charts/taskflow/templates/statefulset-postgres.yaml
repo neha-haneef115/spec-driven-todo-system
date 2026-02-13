@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{ include "taskflow.fullname" . }}-postgres
+  name: {{ include "Taskly.fullname" . }}-postgres
   labels:
-    {{- include "taskflow.labels" . | nindent 4 }}
+    {{- include "Taskly.labels" . | nindent 4 }}
     app: postgres
 spec:
-  serviceName: {{ include "taskflow.fullname" . }}-postgres-headless
+  serviceName: {{ include "Taskly.fullname" . }}-postgres-headless
   replicas: {{ .Values.postgresql.replicaCount }}
   selector:
     matchLabels:
-      {{- include "taskflow.selectorLabels" . | nindent 6 }}
+      {{- include "Taskly.selectorLabels" . | nindent 6 }}
       app: postgres
   template:
     metadata:
       labels:
-        {{- include "taskflow.selectorLabels" . | nindent 8 }}
+        {{- include "Taskly.selectorLabels" . | nindent 8 }}
         app: postgres
     spec:
       containers:
@@ -33,12 +33,12 @@ spec:
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-secrets
+                  name: {{ include "Taskly.fullname" . }}-secrets
                   key: db-user
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "taskflow.fullname" . }}-secrets
+                  name: {{ include "Taskly.fullname" . }}-secrets
                   key: db-password
           volumeMounts:
             - name: postgres-data
@@ -81,9 +81,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "taskflow.fullname" . }}-postgres-service
+  name: {{ include "Taskly.fullname" . }}-postgres-service
   labels:
-    {{- include "taskflow.labels" . | nindent 4 }}
+    {{- include "Taskly.labels" . | nindent 4 }}
     app: postgres
 spec:
   type: {{ .Values.postgresql.service.type }}
@@ -93,6 +93,6 @@ spec:
       protocol: TCP
       name: postgres
   selector:
-    {{- include "taskflow.selectorLabels" . | nindent 4 }}
+    {{- include "Taskly.selectorLabels" . | nindent 4 }}
     app: postgres
 {{- end }}

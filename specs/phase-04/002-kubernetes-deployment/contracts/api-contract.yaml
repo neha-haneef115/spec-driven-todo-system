@@ -1,9 +1,9 @@
-# API Contract for Taskflow Backend Service
+# API Contract for Taskly Backend Service
 
 openapi: 3.0.0
 info:
-  title: Taskflow Backend API
-  description: API for the Taskflow application backend
+  title: Taskly Backend API
+  description: API for the Taskly application backend
   version: 1.0.0
 
 servers:

@@ -28,15 +28,15 @@ docker-compose -f compose.yaml up --build -d
 ```bash
 # Build the frontend container
 cd phase-04\frontend
-docker build -t taskflow-frontend:latest .
+docker build -t Taskly-frontend:latest .
 
 # Build the backend container
 cd phase-04\backend
-docker build -t taskflow-backend:latest .
+docker build -t Taskly-backend:latest .
 
 # Build the MCP server container
 cd phase-04\mcp_server
-docker build -t taskflow-mcp-server:latest .
+docker build -t Taskly-mcp-server:latest .
 
 # Run the containers with Docker Compose
 cd phase-04
@@ -99,4 +99,4 @@ After building, verify image sizes meet the requirements:
 - Backend: Should be under 150MB
 - MCP Server: Should be optimized as well
 
-Check sizes with: `docker images | grep taskflow-`
+Check sizes with: `docker images | grep Taskly-`

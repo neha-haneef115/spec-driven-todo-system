@@ -18,7 +18,7 @@ link:
 files:
   - ".claude/skills/kubernetes-deployment/SKILL.md"
   - ".claude/skills/kubernetes-deployment/references/best-practices.md"
-  - ".claude/skills/kubernetes-deployment/references/taskflow-deployment.md"
+  - ".claude/skills/kubernetes-deployment/references/Taskly-deployment.md"
   - ".claude/skills/kubernetes-deployment/scripts/kubectl-helper.sh"
 tests: []
 outcome: "Successfully created comprehensive Kubernetes deployment skill for containerized applications"
@@ -34,6 +34,6 @@ Using your skill creator skill create a new skill for Kubernetes. I will use it 
 Created a comprehensive Kubernetes deployment skill with the following components:
 1. Main skill documentation (SKILL.md) covering deployment workflows from basic to advanced
 2. Best practices reference document for Kubernetes configuration and deployment
-3. Application-specific guidance for the Taskflow application
+3. Application-specific guidance for the Taskly application
 4. Helper script for common Kubernetes operations
-The skill is designed for beginners to learn Kubernetes deployment and scaling of containerized applications, with specific focus on the Taskflow application with frontend, backend, and MCP server components.
+The skill is designed for beginners to learn Kubernetes deployment and scaling of containerized applications, with specific focus on the Taskly application with frontend, backend, and MCP server components.

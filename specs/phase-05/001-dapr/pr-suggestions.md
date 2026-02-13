@@ -1,6 +1,6 @@
-# PR Suggestions for Taskflow DAPR Integration
+# PR Suggestions for Taskly DAPR Integration
 
-This document tracks the code review suggestions for PR #12: "feat(dapr): integrate DAPR with Taskflow services and add HPA support"
+This document tracks the code review suggestions for PR #12: "feat(dapr): integrate DAPR with Taskly services and add HPA support"
 
 ## Summary
 
@@ -41,7 +41,7 @@ This document tracks the code review suggestions for PR #12: "feat(dapr): integr
 - **Status**: [X] Applied
 
 ### S005 - Medium Priority
-- **File**: `phase-05/charts/taskflow/templates/NOTES.txt`
+- **File**: `phase-05/charts/Taskly/templates/NOTES.txt`
 - **Reviewer**: gemini-code-assist[bot]
 - **Issue**: Ambiguous path for dapr-components
 - **Suggestion**: Provide explicit path or include in Helm chart

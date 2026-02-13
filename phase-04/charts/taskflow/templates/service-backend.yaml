@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "taskflow.fullname" . }}-backend-service
+  name: {{ include "Taskly.fullname" . }}-backend-service
   labels:
-    {{- include "taskflow.labels" . | nindent 4 }}
+    {{- include "Taskly.labels" . | nindent 4 }}
     app.kubernetes.io/component: backend
 spec:
   type: {{ .Values.backend.service.type }}
@@ -13,4 +13,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "taskflow.selectorLabels" . | nindent 4 }}
+    {{- include "Taskly.selectorLabels" . | nindent 4 }}

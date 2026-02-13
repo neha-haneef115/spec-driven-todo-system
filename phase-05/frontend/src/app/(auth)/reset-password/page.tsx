@@ -1,19 +1,39 @@
 import { ResetPasswordForm } from "@/components/auth/reset-password";
-import { CoffeeIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function ResetPasswordPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-warm p-4">
-      <div className="w-full max-w-md animate-scale-in">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-6">
+      <div className="w-full max-w-md">
         {/* Logo Section */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-espresso shadow-elevated mb-4">
-            <CoffeeIcon className="w-8 h-8 text-primary-foreground" />
+          <div className="inline-block">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+              Taskly
+            </h1>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
+              Create a new password
+            </p>
           </div>
-          <h1 className="text-4xl font-bold font-display text-foreground">TaskFlow</h1>
-          <p className="text-muted-foreground mt-2 font-sans">Create a new password</p>
         </div>
-        <ResetPasswordForm />
+        
+        {/* Reset Password Form */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mb-6">
+          <ResetPasswordForm />
+        </div>
+        
+        {/* Bottom Links */}
+        <div className="text-center">
+          <div className="text-sm text-gray-600 dark:text-gray-400">
+            Remember your password?{" "}
+            <Link 
+              href="/sign-in" 
+              className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
+            >
+              Back to sign in
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

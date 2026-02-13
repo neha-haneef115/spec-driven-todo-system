@@ -13,7 +13,7 @@ links:
   spec: null
   ticket: null
   adr: null
-  pr: https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/9
+  pr: https://github.com/neha-haneef115/spec-driven-todo-system/pull/9
 ---
 
 # Git Workflow Completion for Kubernetes Deployment
@@ -30,13 +30,13 @@ Successfully executed the Git workflow for the Kubernetes deployment completion:
 - Commit: "feat(k8s): complete Kubernetes deployment with MCP server fix"
 - Changes: Fixed MCP server CrashLoopBackOff by correcting health check configuration, updated deployment template with proper initialDelaySeconds for liveness/readiness probes, marked all 60 tasks as completed in tasks.md
 - Push: Successfully pushed to remote repository
-- PR: Pull request already exists at https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/9
+- PR: Pull request already exists at https://github.com/neha-haneef115/spec-driven-todo-system/pull/9
 
-The Kubernetes deployment for the Taskflow application has been completed with all services running properly. The key fix was correcting the health check configuration in the MCP server deployment template to prevent overly aggressive health checks from causing the CrashLoopBackOff condition.
+The Kubernetes deployment for the Taskly application has been completed with all services running properly. The key fix was correcting the health check configuration in the MCP server deployment template to prevent overly aggressive health checks from causing the CrashLoopBackOff condition.
 
 ## Files Modified
 
-- phase-04/charts/taskflow/templates/deployment-mcp-server.yaml
+- phase-04/charts/Taskly/templates/deployment-mcp-server.yaml
 - specs/phase-04/002-kubernetes-deployment/tasks.md
 - Various other Kubernetes configuration files
 

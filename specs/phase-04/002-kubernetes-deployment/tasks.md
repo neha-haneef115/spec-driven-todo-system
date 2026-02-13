@@ -1,6 +1,6 @@
-# Implementation Tasks: Kubernetes Deployment for Taskflow
+# Implementation Tasks: Kubernetes Deployment for Taskly
 
-**Feature**: Kubernetes Deployment for Taskflow
+**Feature**: Kubernetes Deployment for Taskly
 **Branch**: `phase-04/002-kubernetes-deployment`
 **Date**: 2026-01-05
 **Spec**: [Kubernetes Deployment Spec](spec.md)
@@ -8,11 +8,11 @@
 
 ## Implementation Strategy
 
-Deploy the Taskflow application (frontend, backend, MCP server) on a local Kubernetes cluster using Minikube. This involves creating Helm charts for the application, configuring service discovery and networking, setting up persistent storage, and implementing health checks. The deployment will follow production-grade practices with proper resource allocation, security configurations, and scalability features.
+Deploy the Taskly application (frontend, backend, MCP server) on a local Kubernetes cluster using Minikube. This involves creating Helm charts for the application, configuring service discovery and networking, setting up persistent storage, and implementing health checks. The deployment will follow production-grade practices with proper resource allocation, security configurations, and scalability features.
 
 The implementation follows a phased approach:
 - Phase 1: Setup and foundational tasks
-- Phase 2: User Story 1 - Deploy Taskflow on Local Kubernetes (P1)
+- Phase 2: User Story 1 - Deploy Taskly on Local Kubernetes (P1)
 - Phase 3: User Story 2 - Configure Service Discovery and Networking (P2)
 - Phase 4: User Story 3 - Set up Persistent Storage (P3)
 - Phase 5: Polish and cross-cutting concerns
@@ -54,13 +54,13 @@ Prepare foundational components needed for all user stories.
 - [X] T008 Create ConfigMap for backend configuration in manifests/configmap-secrets.yaml
 - [X] T009 Create Secret for sensitive data in manifests/configmap-secrets.yaml
 
-## Phase 3: User Story 1 - Deploy Taskflow on Local Kubernetes (Priority: P1)
+## Phase 3: User Story 1 - Deploy Taskly on Local Kubernetes (Priority: P1)
 
 ### Goal
-Deploy the Taskflow application (frontend, backend, MCP server) on a local Kubernetes cluster using Minikube so that I can test the application in a production-like environment.
+Deploy the Taskly application (frontend, backend, MCP server) on a local Kubernetes cluster using Minikube so that I can test the application in a production-like environment.
 
 ### Independent Test
-Can be fully tested by deploying the application on Minikube and verifying all services are running and communicating properly, delivering a fully functional Taskflow application.
+Can be fully tested by deploying the application on Minikube and verifying all services are running and communicating properly, delivering a fully functional Taskly application.
 
 ### Tasks
 
@@ -72,15 +72,15 @@ Can be fully tested by deploying the application on Minikube and verifying all s
 - [X] T015 [US1] Create MCP server service manifest in manifests/service-mcp-server.yaml
 - [X] T016 [US1] Create ingress manifest in manifests/ingress.yaml
 - [X] T017 [US1] Set up Minikube cluster with appropriate resources
-- [X] T018 [US1] Create Helm Chart.yaml file in charts/taskflow/Chart.yaml
-- [X] T019 [US1] Create Helm values.yaml file in charts/taskflow/values.yaml
-- [X] T020 [P] [US1] Create Helm template for frontend deployment in charts/taskflow/templates/deployment-frontend.yaml
-- [X] T021 [P] [US1] Create Helm template for backend deployment in charts/taskflow/templates/deployment-backend.yaml
-- [X] T022 [P] [US1] Create Helm template for MCP server deployment in charts/taskflow/templates/deployment-mcp-server.yaml
-- [X] T023 [US1] Create Helm template for frontend service in charts/taskflow/templates/service-frontend.yaml
-- [X] T024 [US1] Create Helm template for backend service in charts/taskflow/templates/service-backend.yaml
-- [X] T025 [US1] Create Helm template for MCP server service in charts/taskflow/templates/service-mcp-server.yaml
-- [X] T026 [US1] Create Helm template for ingress in charts/taskflow/templates/ingress.yaml
+- [X] T018 [US1] Create Helm Chart.yaml file in charts/Taskly/Chart.yaml
+- [X] T019 [US1] Create Helm values.yaml file in charts/Taskly/values.yaml
+- [X] T020 [P] [US1] Create Helm template for frontend deployment in charts/Taskly/templates/deployment-frontend.yaml
+- [X] T021 [P] [US1] Create Helm template for backend deployment in charts/Taskly/templates/deployment-backend.yaml
+- [X] T022 [P] [US1] Create Helm template for MCP server deployment in charts/Taskly/templates/deployment-mcp-server.yaml
+- [X] T023 [US1] Create Helm template for frontend service in charts/Taskly/templates/service-frontend.yaml
+- [X] T024 [US1] Create Helm template for backend service in charts/Taskly/templates/service-backend.yaml
+- [X] T025 [US1] Create Helm template for MCP server service in charts/Taskly/templates/service-mcp-server.yaml
+- [X] T026 [US1] Create Helm template for ingress in charts/Taskly/templates/ingress.yaml
 - [X] T027 [US1] Deploy the application using Helm chart to Minikube
 - [X] T028 [US1] Verify all services are running in Minikube
 - [X] T029 [US1] Test access to the frontend via ingress
@@ -106,7 +106,7 @@ Can be tested by verifying that services can communicate using Kubernetes servic
 ## Phase 5: User Story 3 - Set up Persistent Storage (Priority: P3)
 
 ### Goal
-Configure persistent storage for the Taskflow application so that data persists across pod restarts and deployments.
+Configure persistent storage for the Taskly application so that data persists across pod restarts and deployments.
 
 ### Independent Test
 Can be tested by creating data in the application, restarting pods, and verifying that data persists, delivering data reliability.
@@ -115,7 +115,7 @@ Can be tested by creating data in the application, restarting pods, and verifyin
 
 - [X] T040 [US3] Create PersistentVolumeClaim manifest for database in manifests/pvc.yaml
 - [X] T041 [US3] Update backend deployment to mount persistent storage in manifests/deployment-backend.yaml
-- [X] T042 [US3] Create Helm template for PVC in charts/taskflow/templates/pvc.yaml
+- [X] T042 [US3] Create Helm template for PVC in charts/Taskly/templates/pvc.yaml
 - [X] T043 [US3] Update Helm values.yaml with storage configuration
 - [X] T044 [US3] Configure database to use persistent storage
 - [X] T045 [US3] Test data persistence by creating data and restarting pods
@@ -130,8 +130,8 @@ Implement health checks, resource limits, and other production-ready configurati
 
 - [X] T050 Add resource requests and limits to all deployments in manifests/
 - [X] T051 Add liveness and readiness probes to all deployments in manifests/
-- [X] T052 Update Helm templates with resource configurations in charts/taskflow/templates/
-- [X] T053 Update Helm templates with health check configurations in charts/taskflow/templates/
+- [X] T052 Update Helm templates with resource configurations in charts/Taskly/templates/
+- [X] T053 Update Helm templates with health check configurations in charts/Taskly/templates/
 - [X] T054 Create horizontal pod autoscaler manifests in manifests/hpa.yaml
 - [X] T055 Add security contexts to deployments in manifests/
 - [X] T056 Update ingress with TLS configuration in manifests/ingress.yaml

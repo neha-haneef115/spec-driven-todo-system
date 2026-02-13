@@ -1,10 +1,10 @@
-# Data Model: Kubernetes Deployment for Taskflow
+# Data Model: Kubernetes Deployment for Taskly
 
 ## Kubernetes Resources
 
 ### Frontend Deployment
 - **Name**: frontend-deployment
-- **Container Image**: taskflow-frontend:latest
+- **Container Image**: Taskly-frontend:latest
 - **Ports**: 3000 (Next.js server)
 - **Environment Variables**:
   - REACT_APP_API_URL: URL of the backend service
@@ -17,7 +17,7 @@
 
 ### Backend Deployment
 - **Name**: backend-deployment
-- **Container Image**: taskflow-backend:latest
+- **Container Image**: Taskly-backend:latest
 - **Ports**: 8000 (FastAPI server)
 - **Environment Variables**:
   - MCP_SERVER_URL: URL of the MCP server service (e.g., http://mcp-server:8080)
@@ -31,7 +31,7 @@
 
 ### MCP Server Deployment
 - **Name**: mcp-server-deployment
-- **Container Image**: taskflow-mcp-server:latest
+- **Container Image**: Taskly-mcp-server:latest
 - **Ports**: 8080 (MCP server)
 - **Environment Variables**:
   - GEMINI_API_KEY: API key for the Gemini service
@@ -97,8 +97,8 @@
 ## Ingress
 
 ### Application Ingress
-- **Name**: taskflow-ingress
-- **Host**: taskflow.local (for local development)
+- **Name**: Taskly-ingress
+- **Host**: Taskly.local (for local development)
 - **Paths**:
   - /: routes to frontend-service
   - /api/*: routes to backend-service

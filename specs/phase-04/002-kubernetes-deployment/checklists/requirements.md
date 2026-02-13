@@ -1,4 +1,4 @@
-# Specification Quality Checklist: Kubernetes Deployment for Taskflow
+# Specification Quality Checklist: Kubernetes Deployment for Taskly
 
 **Purpose**: Validate specification completeness and quality before proceeding to planning
 **Created**: 2026-01-05

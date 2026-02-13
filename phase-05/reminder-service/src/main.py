@@ -88,7 +88,7 @@ app = FastAPI(
 @app.get("/")
 def read_root():
     """Root endpoint for the reminder service."""
-    return {"message": "Reminder Service for Taskflow", "status": "running"}
+    return {"message": "Reminder Service for Taskly", "status": "running"}
 
 
 @app.get("/health")

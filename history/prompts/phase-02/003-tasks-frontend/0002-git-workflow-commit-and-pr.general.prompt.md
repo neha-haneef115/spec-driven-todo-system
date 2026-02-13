@@ -19,7 +19,7 @@ links:
   spec: null
   ticket: null
   adr: null
-  pr: https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/4
+  pr: https://github.com/neha-haneef115/spec-driven-todo-system/pull/4
 files:
   - phase-02/readme.md
   - phase-02/frontend/readme.md
@@ -56,4 +56,4 @@ The user wanted to commit the completed task management frontend feature with CR
 Successfully completed the git workflow with:
 - Branch: `phase-02/003-tasks-frontend`
 - Commit: "feat(tasks-frontend): complete task management frontend with CRUD operations and filtering"
-- PR: https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/4
+- PR: https://github.com/neha-haneef115/spec-driven-todo-system/pull/4

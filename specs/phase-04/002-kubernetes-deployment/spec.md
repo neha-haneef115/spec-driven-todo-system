@@ -1,4 +1,4 @@
-# Feature Specification: Kubernetes Deployment for Taskflow
+# Feature Specification: Kubernetes Deployment for Taskly
 
 **Feature Branch**: `phase-04/002-kubernetes-deployment`
 **Created**: 2026-01-05
@@ -17,19 +17,19 @@
 
 ## User Scenarios & Testing *(mandatory)*
 
-### User Story 1 - Deploy Taskflow on Local Kubernetes (Priority: P1)
+### User Story 1 - Deploy Taskly on Local Kubernetes (Priority: P1)
 
-As a developer, I want to deploy the Taskflow application (frontend, backend, MCP server) on a local Kubernetes cluster using Minikube so that I can test the application in a production-like environment.
+As a developer, I want to deploy the Taskly application (frontend, backend, MCP server) on a local Kubernetes cluster using Minikube so that I can test the application in a production-like environment.
 
 **Why this priority**: This is the foundational capability that enables all other Kubernetes features. Without a working deployment, no other functionality is possible.
 
-**Independent Test**: Can be fully tested by deploying the application on Minikube and verifying all services are running and communicating properly, delivering a fully functional Taskflow application.
+**Independent Test**: Can be fully tested by deploying the application on Minikube and verifying all services are running and communicating properly, delivering a fully functional Taskly application.
 
 **Acceptance Scenarios**:
 
-1. **Given** a local machine with Minikube installed, **When** I deploy the Taskflow application using Helm charts, **Then** all three services (frontend, backend, MCP server) should be running in separate pods and communicating correctly.
+1. **Given** a local machine with Minikube installed, **When** I deploy the Taskly application using Helm charts, **Then** all three services (frontend, backend, MCP server) should be running in separate pods and communicating correctly.
 
-2. **Given** the application is deployed on Kubernetes, **When** I access the frontend, **Then** I can interact with the Taskflow and all functionality works as expected.
+2. **Given** the application is deployed on Kubernetes, **When** I access the frontend, **Then** I can interact with the Taskly and all functionality works as expected.
 
 ---
 
@@ -49,7 +49,7 @@ As a developer, I want to configure proper service discovery and networking in K
 
 ### User Story 3 - Set up Persistent Storage (Priority: P3)
 
-As a developer, I want to configure persistent storage for the Taskflow application so that data persists across pod restarts and deployments.
+As a developer, I want to configure persistent storage for the Taskly application so that data persists across pod restarts and deployments.
 
 **Why this priority**: While not critical for initial deployment, persistent storage is important for maintaining user data and application state in production scenarios.
 
@@ -97,6 +97,6 @@ As a developer, I want to configure persistent storage for the Taskflow applicat
 
 - **SC-001**: All three services (frontend, backend, MCP server) are successfully deployed and running in Kubernetes pods with 99% uptime during testing
 - **SC-002**: Inter-service communication works reliably using Kubernetes service names with response times under 500ms
-- **SC-003**: Users can access the Taskflow application via web browser and perform all core functions without errors
+- **SC-003**: Users can access the Taskly application via web browser and perform all core functions without errors
 - **SC-004**: The application can scale to handle at least 100 concurrent users with acceptable response times
 - **SC-005**: Pod restarts and updates can be performed without data loss when persistent storage is configured

@@ -37,7 +37,7 @@ links:
   SPEC: "specs/phase-04/001-docker-containerization/spec.md"
   TICKET: null
   ADR: null
-  PR: "https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/8"
+  PR: "https://github.com/neha-haneef115/spec-driven-todo-system/pull/8"
 ---
 
 # Git Workflow Completion for Docker Containerization
@@ -73,7 +73,7 @@ Successfully completed the git workflow for the Docker containerization feature 
 ### Verification
 - Commit successful with 30 files changed (1734 insertions, 513 deletions)
 - Push to remote repository completed successfully
-- Pull request created with URL: https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/8
+- Pull request created with URL: https://github.com/neha-haneef115/spec-driven-todo-system/pull/8
 
 ## Outcome
 

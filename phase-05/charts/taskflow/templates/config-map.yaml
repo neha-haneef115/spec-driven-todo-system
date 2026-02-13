@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ include "taskflow.fullname" . }}-config
+  name: {{ include "Taskly.fullname" . }}-config
   labels:
-    {{- include "taskflow.labels" . | nindent 4 }}
+    {{- include "Taskly.labels" . | nindent 4 }}
 data:
   # Frontend configuration
-  NEXT_PUBLIC_BASE_URL: "http://{{ include "taskflow.fullname" . }}-frontend-service:3000"
-  NEXT_PUBLIC_API_BASE_URL: "http://{{ include "taskflow.fullname" . }}-backend-service:8000/v1/api"
+  NEXT_PUBLIC_BASE_URL: "http://{{ include "Taskly.fullname" . }}-frontend-service:3000"
+  NEXT_PUBLIC_API_BASE_URL: "http://{{ include "Taskly.fullname" . }}-backend-service:8000/v1/api"
   NODE_ENV: "production"
 
   # Backend configuration
-  MCP_SERVER_URL: "http://{{ include "taskflow.fullname" . }}-mcp-server-service:8080"
+  MCP_SERVER_URL: "http://{{ include "Taskly.fullname" . }}-mcp-server-service:8080"
   ENVIRONMENT: "production"
   JWT_ALGORITHM: "EdDSA"
 

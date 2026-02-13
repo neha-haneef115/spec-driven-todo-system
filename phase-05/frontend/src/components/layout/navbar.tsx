@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { useAuth, useUser } from "@/features/auth/hooks";
-import { CoffeeIcon, LogOutIcon, UserIcon, HomeIcon, LogInIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
@@ -12,75 +11,72 @@ export function Navbar() {
   const { signOut: { mutate: signOut } } = useAuth();
   const pathname = usePathname();
 
-  // if (!user) return null;
-
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-md border-b shadow-glow">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-6">
-          <Link
-            href={user ? "/dashboard" : "/sign-in"}
-            className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-espresso flex items-center justify-center shadow-soft">
-              <CoffeeIcon className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold font-display text-foreground">TaskFlow</h1>
-              <p className="text-xs text-muted-foreground font-sans">AI-Powered Productivity</p>
-            </div>
-          </Link>
-          {user &&
-            <nav className="hidden md:flex items-center gap-1">
-              <Link href="/dashboard">
-                <Button
-                  variant={isActive("/dashboard") ? "secondary" : "ghost"}
-                  size="sm"
-                  className="gap-2"
-                >
-                  <HomeIcon className="w-4 h-4" />
-                  Dashboard
-                </Button>
-              </Link>
-              <Link href="/profile">
-                <Button
-                  variant={isActive("/profile") ? "secondary" : "ghost"}
-                  size="sm"
-                  className="gap-2"
-                >
-                  <UserIcon className="w-4 h-4" />
+    <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-8">
+            <Link
+              href={user ? "/dashboard" : "/sign-in"}
+              className="group">
+              <div className="flex items-baseline gap-2">
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  Taskly
+                </h1>
+                <span className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  Manage
+                </span>
+              </div>
+            </Link>
+            {user &&
+              <nav className="hidden md:flex items-center gap-1">
+                <Link href="/dashboard">
+                  <Button
+                    variant={isActive("/dashboard") ? "default" : "ghost"}
+                    size="sm"
+                    className="font-medium"
+                  >
+                    Dashboard
+                  </Button>
+                </Link>
+                <Link href="/profile">
+                  <Button
+                    variant={isActive("/profile") ? "default" : "ghost"}
+                    size="sm"
+                    className="font-medium"
+                  >
+                    Profile
+                  </Button>
+                </Link>
+              </nav>}
+          </div>
+
+          <div className="flex items-center gap-3">
+            {user ? <>
+              <Link href="/profile" className="md:hidden">
+                <Button variant="ghost" size="sm" className="font-medium">
                   Profile
                 </Button>
               </Link>
-            </nav>}
-        </div>
-
-        <div className="flex items-center gap-2">
-          {user ? <>
-            <Link href="/profile" className="md:hidden">
-              <Button variant="ghost" size="icon">
-                <UserIcon className="w-4 h-4" />
+              <Button variant="outline" size="sm" onClick={() => signOut()} className="font-medium">
+                Sign Out
               </Button>
-            </Link>
-            <Button variant="ghost" size="sm" onClick={() => signOut()}>
-              <LogOutIcon className="w-4 h-4 mr-2" />
-              <span className="hidden sm:inline">Sign Out</span>
-            </Button>
-          </> : <>
-            <Link href="/sign-in">
-              <Button variant="outline" size="sm">
-                <LogInIcon className="w-4 h-4 mr-2" />
-                <span className="hidden sm:inline">Login</span>
-              </Button>
-            </Link>
-            <Link href="/sign-up">
-              <Button variant="espresso" size="sm">
-                Create Account
-              </Button>
-            </Link>
-          </>}
-          <AnimatedThemeToggler />
+            </> : <>
+              <Link href="/sign-in">
+                <Button variant="ghost" size="sm" className="font-medium">
+                  Login
+                </Button>
+              </Link>
+              <Link href="/sign-up">
+                <Button size="sm" className="font-medium bg-blue-600 hover:bg-blue-700 text-white">
+                  Get Started
+                </Button>
+              </Link>
+            </>}
+            <AnimatedThemeToggler />
+          </div>
         </div>
       </div>
     </header>

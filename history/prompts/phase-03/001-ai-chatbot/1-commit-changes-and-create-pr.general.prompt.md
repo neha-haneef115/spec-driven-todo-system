@@ -18,7 +18,7 @@ links:
   spec: null
   ticket: null
   adr: null
-  pr: "https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/5"
+  pr: "https://github.com/neha-haneef115/spec-driven-todo-system/pull/5"
 files_yaml: 
   - ".claude/skills/auth/SKILL.md"
   - ".claude/skills/chatkit-stores-creator/SKILL.md"
@@ -393,7 +393,7 @@ response_text: |
   - Backend implementation with FastAPI, database models, and services
   - Architecture decision records and prompt history records
 
-  PR created: https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/5
+  PR created: https://github.com/neha-haneef115/spec-driven-todo-system/pull/5
 
   All changes have been committed and pushed successfully.
 outcome: |

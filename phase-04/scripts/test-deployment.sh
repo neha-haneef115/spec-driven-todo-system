@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Script to test the complete Kubernetes deployment of Taskflow application
+# Script to test the complete Kubernetes deployment of Taskly application
 
 set -e
 
 # Default values
-NAMESPACE="taskflow"
+NAMESPACE="Taskly"
 TIMEOUT=300  # 5 minutes timeout for deployment readiness
 
-echo "Starting deployment test for Taskflow application..."
+echo "Starting deployment test for Taskly application..."
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -24,7 +24,7 @@ while [[ $# -gt 0 ]]; do
         -h|--help)
             echo "Usage: $0 [OPTIONS]"
             echo "Options:"
-            echo "  -n, --namespace STRING   Namespace to test (default: taskflow)"
+            echo "  -n, --namespace STRING   Namespace to test (default: Taskly)"
             echo "  -t, --timeout NUMBER     Timeout in seconds (default: 300)"
             echo "  -h, --help              Show this help message"
             exit 0
@@ -89,11 +89,11 @@ fi
 echo "Namespace $NAMESPACE exists, proceeding with tests..."
 
 # List expected resources
-EXPECTED_DEPLOYMENTS=("taskflow-frontend" "taskflow-backend" "taskflow-mcp-server")
-EXPECTED_STATEFULSETS=("taskflow-postgres")
-EXPECTED_SERVICES=("taskflow-frontend-service" "taskflow-backend-service" "taskflow-mcp-server-service" "taskflow-postgres-service")
-EXPECTED_INGRESS=("taskflow-ingress")
-EXPECTED_PVC=("taskflow-data-pvc")
+EXPECTED_DEPLOYMENTS=("Taskly-frontend" "Taskly-backend" "Taskly-mcp-server")
+EXPECTED_STATEFULSETS=("Taskly-postgres")
+EXPECTED_SERVICES=("Taskly-frontend-service" "Taskly-backend-service" "Taskly-mcp-server-service" "Taskly-postgres-service")
+EXPECTED_INGRESS=("Taskly-ingress")
+EXPECTED_PVC=("Taskly-data-pvc")
 
 # Test deployments
 echo ""
@@ -197,11 +197,11 @@ fi
 # Test external accessibility through ingress
 echo ""
 echo "Testing external accessibility..."
-INGRESS_HOST=$(kubectl get ingress taskflow-ingress -n $NAMESPACE -o jsonpath='{.spec.rules[0].host}' 2>/dev/null || echo "taskflow.local")
+INGRESS_HOST=$(kubectl get ingress Taskly-ingress -n $NAMESPACE -o jsonpath='{.spec.rules[0].host}' 2>/dev/null || echo "Taskly.local")
 echo "Application should be accessible at: http://$INGRESS_HOST"
 
 echo ""
-echo "All tests passed! The Taskflow application is successfully deployed and running in Kubernetes."
+echo "All tests passed! The Taskly application is successfully deployed and running in Kubernetes."
 echo ""
 echo "Deployment Summary:"
 kubectl get all -n $NAMESPACE

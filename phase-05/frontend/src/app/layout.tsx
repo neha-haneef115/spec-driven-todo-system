@@ -27,10 +27,10 @@ const crimsonPro = Crimson_Pro({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | TaskFlow",
-    default: "TaskFlow - Your AI-powered productivity companion",
+    template: "%s | Taskly",
+    default: "Taskly - Your modern task management companion",
   },
-  description: "Your AI-powered productivity companion",
+  description: "Your modern task management companion",
 };
 
 export default function RootLayout({

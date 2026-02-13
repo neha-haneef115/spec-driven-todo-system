@@ -37,8 +37,8 @@ class Settings(BaseSettings):
 
     # Kafka settings
     kafka_bootstrap_servers: str = "localhost:9092"
-    kafka_client_id: str = "taskflow-backend"
-    kafka_group_id: str = "taskflow-group"
+    kafka_client_id: str = "Taskly-backend"
+    kafka_group_id: str = "Taskly-group"
     kafka_security_protocol: str = "PLAINTEXT"
     kafka_sasl_mechanism: str
     kafka_sasl_username: str

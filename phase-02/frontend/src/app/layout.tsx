@@ -7,8 +7,8 @@ import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | TaskFlow",
-    default: "TaskFlow - Your AI-powered productivity companion",
+    template: "%s | Taskly",
+    default: "Taskly - Your AI-powered productivity companion",
   },
   description: "Your AI-powered productivity companion",
 };

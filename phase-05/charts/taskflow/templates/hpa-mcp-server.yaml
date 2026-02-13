@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "taskflow.fullname" . }}-mcp-server-hpa
+  name: {{ include "Taskly.fullname" . }}-mcp-server-hpa
   labels:
-    {{- include "taskflow.labels" . | nindent 4 }}
+    {{- include "Taskly.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "taskflow.fullname" . }}-mcp-server
+    name: {{ include "Taskly.fullname" . }}-mcp-server
   minReplicas: {{ .Values.mcpServer.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.mcpServer.autoscaling.maxReplicas }}
   metrics:

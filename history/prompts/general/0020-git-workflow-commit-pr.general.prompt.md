@@ -14,7 +14,7 @@ links:
   spec: null
   ticket: null
   adr: null
-  pr: https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/13
+  pr: https://github.com/neha-haneef115/spec-driven-todo-system/pull/13
 files:
   - .claude/skills/kafka/SKILL.md
   - .claude/skills/kafka/references/kafka-reference.md
@@ -50,7 +50,7 @@ I've successfully completed the git workflow for the Kafka skill updates:
 ✅ Workflow executed successfully:
 • Branch: update-kafka-skill
 • Commit: "feat(kafka): update Kafka skill with enhanced installation and administration guides"
-• PR: https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/13
+• PR: https://github.com/neha-haneef115/spec-driven-todo-system/pull/13
 
 The changes included enhancing the Kafka skill with comprehensive installation scripts, administration examples, consumer/producer patterns, and troubleshooting guides. The pull request has been created with a detailed description of the changes.
 

@@ -232,8 +232,8 @@ For data that needs to persist across pod restarts:
              claimName: app-storage
    ```
 
-### 7. Working with Multi-Service Applications (Taskflow Example)
-For the specific Taskflow application with frontend, backend, and MCP server:
+### 7. Working with Multi-Service Applications (Taskly Example)
+For the specific Taskly application with frontend, backend, and MCP server:
 
 1. **Create a Helm chart with multiple components**
    - Frontend: Next.js application

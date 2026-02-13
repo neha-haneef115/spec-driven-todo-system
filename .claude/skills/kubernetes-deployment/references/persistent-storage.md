@@ -115,7 +115,7 @@ spec:
         - containerPort: 5432
         env:
         - name: POSTGRES_DB
-          value: "taskflow_db"
+          value: "Taskly_db"
         - name: POSTGRES_USER
           valueFrom:
             secretKeyRef:
@@ -201,9 +201,9 @@ Minikube uses the hostpath provisioner for dynamic storage provisioning, which c
 ### Storage Limits
 Be mindful of the total disk space available in the Minikube VM when requesting storage.
 
-## Implementation for Taskflow Application
+## Implementation for Taskly Application
 
-For the Taskflow application, persistent storage should be implemented for:
+For the Taskly application, persistent storage should be implemented for:
 
 1. **PostgreSQL Database**:
    - Use StatefulSet with volumeClaimTemplates
@@ -222,21 +222,21 @@ For the Taskflow application, persistent storage should be implemented for:
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{ include "taskflow.fullname" . }}-postgres
+  name: {{ include "Taskly.fullname" . }}-postgres
   labels:
-    {{- include "taskflow.labels" . | nindent 4 }}
+    {{- include "Taskly.labels" . | nindent 4 }}
     app: postgres
 spec:
-  serviceName: {{ include "taskflow.fullname" . }}-postgres-headless
+  serviceName: {{ include "Taskly.fullname" . }}-postgres-headless
   replicas: 1
   selector:
     matchLabels:
-      {{- include "taskflow.selectorLabels" . | nindent 6 }}
+      {{- include "Taskly.selectorLabels" . | nindent 6 }}
       app: postgres
   template:
     metadata:
       labels:
-        {{- include "taskflow.selectorLabels" . | nindent 8 }}
+        {{- include "Taskly.selectorLabels" . | nindent 8 }}
         app: postgres
     spec:
       containers:
@@ -253,12 +253,12 @@ spec:
         - name: POSTGRES_USER
           valueFrom:
             secretKeyRef:
-              name: {{ include "taskflow.fullname" . }}-secrets
+              name: {{ include "Taskly.fullname" . }}-secrets
               key: db-user
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: {{ include "taskflow.fullname" . }}-secrets
+              name: {{ include "Taskly.fullname" . }}-secrets
               key: db-password
         volumeMounts:
         - name: postgres-data
@@ -312,4 +312,4 @@ Monitor storage usage with:
 - Regular cleanup of temporary files
 - Plan for storage expansion as needed
 
-This guide provides the foundation for implementing persistent storage in Kubernetes applications, with specific considerations for the Taskflow application and local Minikube development environments.
+This guide provides the foundation for implementing persistent storage in Kubernetes applications, with specific considerations for the Taskly application and local Minikube development environments.

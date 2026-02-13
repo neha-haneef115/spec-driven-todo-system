@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 # Initialize the MCP server
 mcp = FastMCP(
-    name="Taskflow MCP Server",
+    name="Taskly MCP Server",
     json_response=True,
     stateless_http=True,
     streamable_http_path="/",

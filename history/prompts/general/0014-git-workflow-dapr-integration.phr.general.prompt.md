@@ -14,19 +14,19 @@ links:
   spec: null
   ticket: null
   adr: null
-  pr: "https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/12"
+  pr: "https://github.com/neha-haneef115/spec-driven-todo-system/pull/12"
 files:
   - "phase-05/README-DAPR.md"
-  - "phase-05/charts/taskflow/templates/hpa-backend.yaml"
-  - "phase-05/charts/taskflow/templates/hpa-frontend.yaml"
-  - "phase-05/charts/taskflow/templates/hpa-mcp-server.yaml"
-  - "phase-05/charts/taskflow/values.yaml"
-  - "phase-05/charts/taskflow/templates/deployment-backend.yaml"
-  - "phase-05/charts/taskflow/templates/deployment-frontend.yaml"
-  - "phase-05/charts/taskflow/templates/deployment-mcp-server.yaml"
+  - "phase-05/charts/Taskly/templates/hpa-backend.yaml"
+  - "phase-05/charts/Taskly/templates/hpa-frontend.yaml"
+  - "phase-05/charts/Taskly/templates/hpa-mcp-server.yaml"
+  - "phase-05/charts/Taskly/values.yaml"
+  - "phase-05/charts/Taskly/templates/deployment-backend.yaml"
+  - "phase-05/charts/Taskly/templates/deployment-frontend.yaml"
+  - "phase-05/charts/Taskly/templates/deployment-mcp-server.yaml"
   - ".gitignore"
 tests:
-  - "DAPR annotations added to Taskflow deployments"
+  - "DAPR annotations added to Taskly deployments"
   - "HPA configurations created for all services"
   - "Helm chart updated with DAPR integration"
   - "README-DAPR.md created with proper instructions"
@@ -34,13 +34,13 @@ tests:
   - "PR created successfully"
 ---
 
-# Git Workflow: DAPR Integration for Taskflow Application
+# Git Workflow: DAPR Integration for Taskly Application
 
 ## Summary
 
-Successfully executed Git workflow to commit DAPR integration changes for the Taskflow application and create a pull request. The changes include:
+Successfully executed Git workflow to commit DAPR integration changes for the Taskly application and create a pull request. The changes include:
 
-- DAPR integration with Taskflow backend, frontend, and mcp-server services
+- DAPR integration with Taskly backend, frontend, and mcp-server services
 - Horizontal Pod Autoscaler (HPA) configurations for all services
 - Helm chart updates with DAPR annotations and configurations
 - Removal of sample DAPR applications that were incorrectly included
@@ -49,7 +49,7 @@ Successfully executed Git workflow to commit DAPR integration changes for the Ta
 ## Changes Made
 
 ### DAPR Integration
-- Added DAPR annotations to all Taskflow service deployments
+- Added DAPR annotations to all Taskly service deployments
 - Configured DAPR components for pub/sub and state management
 - Updated Helm chart with conditional DAPR integration
 
@@ -59,19 +59,19 @@ Successfully executed Git workflow to commit DAPR integration changes for the Ta
 - Added configurable HPA settings in values.yaml
 
 ### Documentation
-- Created README-DAPR.md with proper instructions for running Taskflow application
-- Emphasized that only actual Taskflow services are included, not sample apps
+- Created README-DAPR.md with proper instructions for running Taskly application
+- Emphasized that only actual Taskly services are included, not sample apps
 - Included verification steps and operational guidance
 
 ### Cleanup
-- Removed sample DAPR applications that were incorrectly mixed with Taskflow
+- Removed sample DAPR applications that were incorrectly mixed with Taskly
 - Added dapr binary to .gitignore to prevent large file commits
 
 ## Pull Request
 
 The changes were successfully committed and pushed to the branch, and a pull request was created:
-https://github.com/neha-haneef115/todo-spec-driven-hackathon/pull/12
+https://github.com/neha-haneef115/spec-driven-todo-system/pull/12
 
 ## Outcome
 
-The Taskflow application now has full DAPR integration with proper service annotations, pub/sub messaging, state management, and auto-scaling capabilities. The implementation follows the requirements and focuses on the actual Taskflow services rather than sample applications.
+The Taskly application now has full DAPR integration with proper service annotations, pub/sub messaging, state management, and auto-scaling capabilities. The implementation follows the requirements and focuses on the actual Taskly services rather than sample applications.

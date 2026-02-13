@@ -146,7 +146,7 @@ export const VerificationEmail = ({
           </Text>
 
           <Text style={footer}>
-            © {new Date().getFullYear()} TaskFlow. All rights reserved.
+            © {new Date().getFullYear()} Taskly. All rights reserved.
           </Text>
         </Container>
       </Body>

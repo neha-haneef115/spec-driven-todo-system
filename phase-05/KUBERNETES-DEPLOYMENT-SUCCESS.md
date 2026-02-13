@@ -1,7 +1,7 @@
 # 🎉 Kubernetes Deployment Success!
 
 ## Overview
-The Taskflow application has been successfully deployed on Kubernetes! This marks a major milestone in the project, demonstrating the complete containerization and orchestration of the application.
+The Taskly application has been successfully deployed on Kubernetes! This marks a major milestone in the project, demonstrating the complete containerization and orchestration of the application.
 
 ## 🏗️ Infrastructure Components
 
@@ -15,14 +15,14 @@ The Taskflow application has been successfully deployed on Kubernetes! This mark
 - **Deployments**: Backend, MCP server, and Frontend deployments
 - **Services**: Internal communication between services
 - **StatefulSet**: PostgreSQL with persistent storage
-- **Ingress**: External access via `taskflow.local`
+- **Ingress**: External access via `Taskly.local`
 - **ConfigMaps/Secrets**: Configuration and sensitive data management
 - **PersistentVolumeClaims**: Data persistence across pod restarts
 
 ### ✅ Service Discovery Working
 - Services can communicate using Kubernetes DNS names:
-  - Backend connects to MCP server: `http://taskflow-release-mcp-server-service:8080`
-  - Backend connects to PostgreSQL: `postgresql://postgres:password@taskflow-release-postgres-service:5432/taskflow_db`
+  - Backend connects to MCP server: `http://Taskly-release-mcp-server-service:8080`
+  - Backend connects to PostgreSQL: `postgresql://postgres:password@Taskly-release-postgres-service:5432/Taskly_db`
 
 ## 🚀 Verification Results
 - Backend service responding to health checks: `{"status":"healthy"}`
@@ -46,6 +46,6 @@ The Taskflow application has been successfully deployed on Kubernetes! This mark
 - Implement production-level security practices
 
 ## 🎯 Achievement
-The Taskflow application is now successfully deployed on Kubernetes with a production-ready architecture featuring service discovery, persistent storage, and scalable components. The core functionality is fully operational and accessible via the Kubernetes cluster.
+The Taskly application is now successfully deployed on Kubernetes with a production-ready architecture featuring service discovery, persistent storage, and scalable components. The core functionality is fully operational and accessible via the Kubernetes cluster.
 
 This deployment demonstrates the complete containerization journey from Docker images to orchestrated Kubernetes services, providing a foundation for production deployment.
