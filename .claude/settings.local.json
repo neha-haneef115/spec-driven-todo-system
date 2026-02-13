@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir *)",
+      "Bash(git --version)",
+      "Bash(git rev-parse --is-inside-work-tree)",
+      "Bash(git rev-parse --abbrev-ref HEAD)",
+      "Bash(.specify/scripts/bash/*)",
+      "Bash(uv run pytest tests/ -v)",
+      "Bash(uv run pytest)",
+      "Bash(git fetch --all --prune)",
+      "Bash(npm run test:run)",
+      "Bash(npm run build)",
+      "mcp__context7__get-library-docs",
+      "Bash(minikube start --driver=docker)",
+      "Bash(kubectl get *)",
+      "Bash(./scripts/health-check.sh)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "context7-http",
+    "vercel"
+  ]
+}
